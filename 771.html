@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+</head>
+
+
+<body>
+    <style>
+        * {
+            font-family: serif;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <h1>
+        #771. Jewels and Stones
+    </h1>
+    <h3>
+        我的思路
+    </h3>
+    <p>
+        将J，S的每个字符存放在char数组, 依次取出J中的字符, 然后对比S中每一个字符,
+
+    </p>
+
+    <h3>我的代码</h3>
+
+    <p>
+        <pre>
+        class Solution {
+            public int numJewelsInStones(String J, String S) {
+                char chars[] = J.toCharArray();
+                char chars2[] = S.toCharArray();
+                int sum = 0;
+                for (int i = 0; i < chars.length; i++) {
+                    for (int j = 0; j< chars2.length; j++) {
+                        if (chars[i] == chars2[j]) {
+                            sum++;
+                        }
+                    }
+                }
+                return sum;
+            }
+        }
+    </pre>
+    </p>
+
+    <h3>改进</h3>
+
+    <p>
+        1.精简代码
+        <pre>
+            public int numJewelsInStones(String J, String S) {
+                int sum = 0;
+                for (char s : S.toCharArray()) {
+                    for (char j: J.toCharArray()) {
+                        if (j == s) {
+                            sum++;
+                        }
+                    }
+                }
+                return sum;
+            }
+    </pre>
+        <p>复杂度分析：</p>
+        <p>
+            时间复杂度：O(J.length * S.length)
+            <br> 空间复杂度：O(J.length * S.length) Java中
+
+        </p>
+        2.使用哈希集合
+        <pre>
+        public int numJewelsInStones(String J, String S) {
+            Set<Character> Jset = new HashSet();
+            for (char j : J.toCharArray())
+            Jest.add(j);
+
+            int sum = 0;
+
+            for(char s : S.toCharArray())
+            if(Jest.contains(s))
+            sum++;
+            return sum;
+        }    
+      </pre>
+        <p>
+            复杂度分析：
+        </p>
+        <p>
+            时间复杂度：O(J.length + S.length)
+        </p>
+        <p>
+            空间复杂度：O(J.length )
+        </p>
+    </p>
+    <p>
+
+    </p>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //创建Vue实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {}
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
