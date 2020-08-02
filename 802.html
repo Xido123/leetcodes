@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+</head>
+
+
+<body>
+    <style>
+        * {
+            font-family: serif;
+            font-weight: bold;
+        }
+    </style>
+
+
+
+    <h3>
+        参考思路
+    </h3>
+    <p>
+        如果我们知道了左子树和右子树的最大深度l和r，那么该二叉树的最大深度为 max(l,r)+1; 而左子树和右子树的最大深度又可以同样的方式进行计算因此 我们在计算当前二叉树的最大深度时，先递归计算出其左子树和右子树的最大深度， 然后再O(1)时间内计算出当前二叉树的最大深度，递归在访问到空节点时推出
+
+
+    </p>
+
+    <h3>递归代码</h3>
+
+    <p>
+        <pre>
+
+            class Solution {
+                public int maxDepth(TreeNode root) {
+                   
+                   return  root == null?0:Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+                    
+                }
+            }
+            
+    </pre>
+    </p>
+    <p>复杂度分析：</p>
+    <p>
+        时间复杂度：O(n)
+        <br> 空间复杂度：O(height)
+
+    </p>
+    <h3>广度优先搜索</h3>
+    <p> 用一个队列存放每一层的所有节点 每次拓展下一层的时候，将队列里的所有节点都拿出来进行扩展，这样能保证每次扩展完队列中有 当前层的所有节点，最后用变量ans来维护扩展的次数 </p>
+
+    <pre>
+        public int maxDepth(TreeNode root) {
+            int res = 0;
+           if(root == null){
+               return 0;
+           }
+           Queue< TreeNode > queue = new LinkedList<>();
+            queue.add(root);
+           while(!queue.isEmpty()){
+               int n = queue.size();
+              
+               for(int i = 0;i< n;i++){
+                    TreeNode curNode = queue.poll();
+                if(curNode.left !=null)
+                  queue.add(curNode.left);
+                if(curNode.right!=null)
+                  queue.add(curNode.right);
+                 
+               }
+                res++;
+            }
+            return res;
+        }
+    </pre>
+
+
+
+    <p>
+        复杂度分析：
+    </p>
+    <p>
+        时间复杂度：O(n)
+    </p>
+    <p>
+        空间复杂度：O(n)
+    </p>
+
+    <p>
+
+    </p>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        //创建Vue实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {}
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>
