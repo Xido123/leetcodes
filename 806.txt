@@ -1,0 +1,44 @@
+1.java跨平台原理
+
+1).执行过程
+源代码文件（.java）文件由编译器编译为.class（二进制文件）
+二进制文件由jvm虚拟机解释为相应操作系统的二进制代码
+
+2 jdk与jre简介
+
+jdk包含jre包含jvm
+
+1）.jdk Java Development Kit Java的标准工具开发包 bin目录存放javac java执行程序
+有三个版本 se ee me
+
+2）.jre java runtime environment 运行基于java编写的程序不可或缺的运行环境
+用于解释java字节码文件
+
+包含了 java virtual machine (jvm),runtime class libraries 与java application launcher
+jar是运行环境并不是开发环境。无编译器和调试器只针对使用java程序的用户
+
+3）.jvm
+ 使用java编译器编译java程序时，生成的是与平台无关的字节码。这些字节码只面向jvm
+ 不同平台的jvm是不相同的，但他们都提供相同的接口。不同平台实现了相对应的虚拟机。
+
+3.安装jdk 后怎样编译和运行java源文件 Demo.java
+  
+  1) javac Demo.java
+     java Demo
+
+4.转义字符\t \n的含义
+ 1）\t     水平制表符 （跳到下一个tab位置）
+    \n 换行符
+
+5.    
+
+ class Main{
+     public static void main(String args[]){
+
+     System.out.println("姓名：\t"+"刘旭东");
+      System.out.println("性别：\t"+"男");
+       System.out.println("年龄：\t"+"22");
+        System.out.println("爱好："+"\t围棋");
+     }
+ }
+ 
