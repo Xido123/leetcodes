@@ -1,0 +1,13 @@
+class Solution {
+    public int findRepeatNumber(int[] nums) {
+         Set<Integer> s = new HashSet<Integer>();
+        for(int i :nums){
+           Boolean b =  s.add(i);
+            if(b == false){
+                return i;
+            }
+
+        }
+        return 0;
+    }
+}
