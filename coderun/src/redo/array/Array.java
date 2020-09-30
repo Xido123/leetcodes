@@ -58,6 +58,8 @@ public class Array {
 /**
  * 根据下标获取元素
  */
-
+ public int getE(int i){
+     return intArray[i];
+ }
 
 }
