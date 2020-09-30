@@ -59,7 +59,11 @@ public class Array {
  * 根据下标获取元素
  */
  public int getE(int i){
-     return intArray[i];
+    if (i>=0 && i < elems) return intArray[i];
+    else {
+        System.out.println("数组下标越界");
+        return -1;
+    }
  }
 
 }
