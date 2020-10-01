@@ -1,5 +1,6 @@
 package redo.tree;
 
+import java.lang.reflect.Array;
 import java.util.Stack;
 
 public class brinytrue {
@@ -86,7 +87,7 @@ public class brinytrue {
            cur = cur.rightChild;
        }
        while (!stack.isEmpty()){
-           
+
        }
     }
 
