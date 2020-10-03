@@ -15,7 +15,7 @@ var numIdenticalPairs = function(nums) {
     return x
 };
 let arr = [];
-for (let i = 0; i < 50000; i++) {
+for (let i = 0;  i <  50000; i++) {
     arr.push(i);
 }
 var t0 = new Date();
