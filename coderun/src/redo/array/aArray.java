@@ -1,6 +1,6 @@
 package redo.array;
 
-public class Array {
+class mArray {
 
 // 用数组封装一个数据结构
 //
@@ -18,13 +18,13 @@ public class Array {
 //    定义数组的最大长度
     private int length;
 //    默认构造一个长度为50 的数组
-    public Array(){
+    public mArray(){
         elems = 0;
         length = 50;
         intArray = new int[length];
     }
 //    构造函数 初始化一个长度为50 的数组
-    public Array(int length){
+    public mArray(int length){
         elems = 0;
         this.length = length;
         intArray = new int[length];
@@ -150,7 +150,7 @@ public class Array {
 
   public static void main(String[] args) {
       //
-      Array c = new Array(10);
+      mArray c = new mArray(10);
       for(int i = 0;i<10;i++){
 //        多情自古空余恨此恨绵绵无绝期
 //          啦啦啦啦沧海已生效
