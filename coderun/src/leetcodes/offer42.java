@@ -12,4 +12,24 @@ public class offer42 {
         }
         return 1;
     }
+
+    /**
+     * 贪心算法
+     */
+    public int maxSubArrayT(int [] nums){
+        int sesSum = 0;
+        int curSum = 0;
+
+    for (int i : nums) {
+      if (curSum <= 0) curSum = i;
+      else curSum += i;
+      resSum = curSum > resSum ? curSum : resSum;
+        }
+    }
+    /**
+     *
+     */
 }
+
+
+
