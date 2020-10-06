@@ -10,26 +10,27 @@ public class Solutionlcp19 {
                 break;
             }
         }
-        for(int i = leaves.length()-1; i>1;i--){
+        for(int i = leaves.length()-1; i>0;i--){
 
             if(leaves.charAt(i) == 'y'){
-                R = i+1;
+                R = i;
+
                 break;
             }
         }
-    System.out.println(R);
+        if(L==R)return 0;
 
         String newS = leaves.substring(L,R);
         int sum = 0;
         for (char c :  newS.toCharArray()) {
             if(c == 'r') sum++;
         }
-
+    if (newS.toCharArray()[newS.length()-1] == 'y'&& sum>2 ||newS.toCharArray()[0] == 'y'&& sum>2   )sum+=1;
         return sum;
     }
 
   public static void main(String[] args) {
     //
-    System.out.println(minimumOperations("ryr"));
+    System.out.println(minimumOperations("yry"));
   }
 }
