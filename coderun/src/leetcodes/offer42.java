@@ -17,7 +17,7 @@ public class offer42 {
      * 贪心算法
      */
     public int maxSubArrayT(int [] nums){
-        int sesSum = 0;
+        int resSum = 0;
         int curSum = 0;
 
     for (int i : nums) {
@@ -25,8 +25,13 @@ public class offer42 {
       else curSum += i;
       resSum = curSum > resSum ? curSum : resSum;
         }
+
+    return  curSum;
+
     }
     /**
+     *
+     *
      *
      */
 }
