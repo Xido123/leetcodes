@@ -20,7 +20,7 @@ public class Solution1200 {
                 a.add(arr[i]);
                 a.add(arr[i+1]);
 
-                l.add(a);
+                l.add(a );
             }
         }
 
