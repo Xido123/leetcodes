@@ -1,6 +1,8 @@
 package leetcodes;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.concurrent.locks.Lock;
 
 public class Solution1436 {
@@ -12,6 +14,7 @@ public class Solution1436 {
 
         }
 
+       String c =  String.valueOf('a');
         for(int i  =0;i<paths.size();i++){
             b[i] = paths.get(i).get(1);
 
