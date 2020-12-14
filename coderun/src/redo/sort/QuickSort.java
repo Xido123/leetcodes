@@ -1,6 +1,6 @@
 package redo.sort;
 
-public class Quick {
+public class QuickSort {
     public static void main(String[] args) {
 
     }
